@@ -1,10 +1,6 @@
 import * as React from 'react'
-import './styles.scss'
+import Calendar from './Calendar'
 
-const Package: React.FC = () => (
-  <div className="package">
-    <h2>Do cool stuff</h2>
-  </div>
-)
+const Package: React.FC = () => <Calendar />
 
 export default Package

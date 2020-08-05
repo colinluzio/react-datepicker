@@ -1,0 +1,193 @@
+.calendar-outer {
+    font-size: 5px;
+    border: 2px solid #06c;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .calendar-header {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        .title {
+            font-weight: 500;
+            font-size: 5em;
+            color: #06c;
+            text-align: center;
+            padding: 0.5em 0.25em;
+            word-spacing: 5px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .button-prev {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none !important;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            border: none;
+            border-top-color: currentcolor;
+            border-top-style: none;
+            border-top-width: medium;
+            border-right-color: currentcolor;
+            border-right-style: none;
+            border-right-width: medium;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            border-top: 1.6em solid transparent;
+            border-bottom: 1.6em solid transparent;
+            -webkit-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+            border-right: 2.4em solid #ccc;
+            left: 1.5rem;
+        }
+
+        .button-next {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none !important;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            border: none;
+            border-top-color: currentcolor;
+            border-top-style: none;
+            border-top-width: medium;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            border-left-color: currentcolor;
+            border-left-style: none;
+            border-left-width: medium;
+            border-top: 1.6em solid transparent;
+            border-bottom: 1.6em solid transparent;
+            -webkit-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+            border-left: 2.4em solid #ccc;
+            right: 1.5rem;
+        }
+    }
+    .calendar-main {
+        display: grid;
+        grid-template: repeat(7, auto) / repeat(7, auto);
+
+        .weekday {
+            text-align: center;
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            -webkit-letter-spacing: 0.1rem;
+            -moz-letter-spacing: 0.1rem;
+            -ms-letter-spacing: 0.1rem;
+            letter-spacing: 0.1rem;
+            padding: 0.6em 0.25em;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            grid-column: 2 / span 1;
+            font-weight: 600;
+            font-size: 2.25em;
+            color: #06c;
+            border-top: 2px solid #06c;
+            border-bottom: 2px solid #06c;
+            border-right: 2px solid #06c;
+        }
+
+        .prev-month-day {
+            text-align: center;
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            -webkit-letter-spacing: 0.1rem;
+            -moz-letter-spacing: 0.1rem;
+            -ms-letter-spacing: 0.1rem;
+            letter-spacing: 0.1rem;
+            padding: 0.6em 0.25em;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            grid-column: 2 / span 1;
+            font-weight: 300;
+            font-size: 4em;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            color: #ddd;
+            -webkit-transition: all 0.4s ease-out;
+            transition: all 0.4s ease-out;
+        }
+        .current-month-day {
+            text-align: center;
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            -webkit-letter-spacing: 0.1rem;
+            -moz-letter-spacing: 0.1rem;
+            -ms-letter-spacing: 0.1rem;
+            letter-spacing: 0.1rem;
+            padding: 0.6em 0.25em;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            grid-column: 4 / span 1;
+            font-weight: 500;
+            font-size: 4em;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            color: #333;
+            -webkit-transition: all 0.4s ease-out;
+            transition: all 0.4s ease-out;
+        }
+        .grid_1 {
+            grid-column: 1 / span 1;
+        }
+        .grid_2 {
+            grid-column: 2 / span 1;
+        }
+        .grid_3 {
+            grid-column: 3 / span 1;
+        }
+        .grid_4 {
+            grid-column: 4 / span 1;
+        }
+        .grid_5 {
+            grid-column: 5 / span 1;
+        }
+        .grid_6 {
+            grid-column: 6 / span 1;
+        }
+        .grid_7 {
+            grid-column: 7 / span 1;
+        }
+    }
+}
