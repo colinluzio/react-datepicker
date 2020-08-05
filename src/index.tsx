@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Calendar from './Calendar'
+import Calendar from './components/Calendar'
 
 const Package: React.FC = () => <Calendar />
 
