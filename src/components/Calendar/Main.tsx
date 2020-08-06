@@ -2,11 +2,15 @@ import * as React from 'react'
 import * as helper from '../../helpers/calendar'
 import './calendar.scss'
 
-const Main: React.FC = () => (
+type CalendarProps = {
+    date: Date
+}
+const Main: React.FC<CalendarProps> = props => (
     <div className="calendar-main">
         {helper.weekdays.map((weekday, index) => (
             <div className={`weekday grid_${index + 1}`}>{weekday}</div>
         ))}
+        {helper.getPrevMonthDays(props.date)}
         <div title="" className="prev-month-day grid_1">
             26
         </div>
