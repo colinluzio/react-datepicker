@@ -47,3 +47,9 @@ export const getCurrentMonthDays = (date: Date): Array<number> => {
 
     return monthDays
 }
+
+export const getGridIndex = (index: number): number => {
+    if (8 > index + 1) return index + 1
+
+    return (index % 7) + 1
+}
