@@ -36,3 +36,14 @@ export const getPrevMonthDays = (date: Date): Array<number> => {
 
     return prevMonthDays
 }
+
+export const getCurrentMonthDays = (date: Date): Array<number> => {
+    let totalDays = getTotalDays(new Date(date.getMonth() - 1))
+    let monthDays = []
+
+    for (let x = 1; x < totalDays + 1; x++) {
+        monthDays.push(x)
+    }
+
+    return monthDays
+}
