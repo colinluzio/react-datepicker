@@ -10,25 +10,11 @@ const Main: React.FC<CalendarProps> = props => (
         {helper.weekdays.map((weekday, index) => (
             <div className={`weekday grid_${index + 1}`}>{weekday}</div>
         ))}
-        {helper.getPrevMonthDays(props.date)}
-        <div title="" className="prev-month-day grid_1">
-            26
-        </div>
-        <div title="" className="prev-month-day grid_2">
-            27
-        </div>
-        <div title="" className="prev-month-day grid_3">
-            28
-        </div>
-        <div title="" className="prev-month-day grid_4">
-            29
-        </div>
-        <div title="" className="prev-month-day grid_5">
-            30
-        </div>
-        <div title="" className="prev-month-day grid_6">
-            31
-        </div>
+        {helper.getPrevMonthDays(props.date).map((day, index) => (
+            <div title="" className={`prev-month-day grid_${index + 1}`}>
+                {day}
+            </div>
+        ))}
         <div title="" className="current-month-day grid_7">
             1
         </div>
