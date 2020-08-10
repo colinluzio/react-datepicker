@@ -25,13 +25,16 @@ export const getPrevMonthDays = (date: Date): Array<number> => {
     let month = date.getMonth()
     let startDay = `${month + 1} / 01 / ${date.getFullYear()}`
     let firstDay = new Date(startDay)
+    let prevMonth = new Date(date)
+    prevMonth.setMonth(date.getMonth() - 1)
 
-    let totalDays = getTotalDays(new Date(date.getMonth() - 1))
+    let totalDays = getTotalDays(prevMonth)
     let prevMonthDays = []
 
     for (let x = 1; x < totalDays + 1; x++) {
         prevMonthDays.push(x)
     }
+
     prevMonthDays = prevMonthDays.reverse().splice(0, firstDay.getDay())
 
     return prevMonthDays
