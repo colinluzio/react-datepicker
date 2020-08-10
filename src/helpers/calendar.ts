@@ -1,6 +1,6 @@
 export const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
-const getTotalDays = (date: Date): number => {
+export const getTotalDays = (date: Date): number => {
     let totalDays =
         date.getMonth() == 0 ||
         date.getMonth() == 2 ||
