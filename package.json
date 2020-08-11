@@ -14,18 +14,33 @@
         "start": "rollup -c -w",
         "test": "jest"
     },
-    "dependencies": {},
+    "type": "module",
+    "dependencies": {
+        "@babel/polyfill": "^7.10.4",
+        "@testing-library/jest-dom": "^5.11.2",
+        "@types/jsdom-global": "^3.0.2",
+        "@types/react-test-renderer": "^16.9.3",
+        "@types/testing-library__jest-dom": "^5.9.2",
+        "jest-dom": "^4.0.0",
+        "jest-transform-css": "^2.0.0",
+        "react-test-renderer": "^16.13.1"
+    },
     "peerDependencies": {
         "react": ">= 16.8.0 < 2",
         "react-dom": ">= 16.8.0 < 2"
     },
     "devDependencies": {
+        "@types/enzyme-adapter-react-16": "^1.0.6",
         "@types/jest": "^26.0.9",
         "@types/react": "^16.3.13",
         "@types/react-dom": "^16.0.5",
         "babel-core": "^6.26.3",
         "babel-runtime": "^6.26.0",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.3",
         "jest": "^26.2.2",
+        "jsdom": "16.4.0",
+        "jsdom-global": "3.0.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "rollup": "^1.29.0",
@@ -44,6 +59,10 @@
     ],
     "jest": {
         "preset": "ts-jest",
-        "testEnvironment": "node"
+        "testEnvironment": "node",
+        "transform": {
+            "^.+\\.js$": "babel-jest",
+            ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
+        }
     }
 }
