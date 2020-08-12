@@ -6,8 +6,8 @@ import * as Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
-describe('Component', () => {
-    it('renders the inner Counter', () => {
+describe('Main Component', () => {
+    it('renders the main div', () => {
         let date = new Date()
         const wrapper = mount(<Main date={date} />)
         expect(wrapper.find('.calendar-main').length).toEqual(1)

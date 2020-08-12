@@ -8,10 +8,16 @@ type CalendarProps = {
 const Main: React.FC<CalendarProps> = props => (
     <div className="calendar-main">
         {helper.weekdays.map((weekday, index) => (
-            <div className={`weekday grid_${index + 1}`}>{weekday}</div>
+            <div className={`weekday grid_${index + 1}`} key={index}>
+                {weekday}
+            </div>
         ))}
         {helper.getPrevMonthDays(props.date).map((day, index) => (
-            <div title="" className={`prev-month-day grid_${index + 1}`}>
+            <div
+                title=""
+                className={`prev-month-day grid_${index + 1}`}
+                key={index}
+            >
                 {day}
             </div>
         ))}
@@ -24,6 +30,7 @@ const Main: React.FC<CalendarProps> = props => (
                     className={`current-month-day grid_${index +
                         1 +
                         helper.getPrevMonthDays(props.date).length}`}
+                    key={index}
                 >
                     {day}
                 </div>
@@ -38,6 +45,7 @@ const Main: React.FC<CalendarProps> = props => (
                     className={`current-month-day grid_${helper.getGridIndex(
                         index
                     )}`}
+                    key={index}
                 >
                     {day}
                 </div>
