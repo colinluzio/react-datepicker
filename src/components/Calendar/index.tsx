@@ -7,7 +7,7 @@ let date = new Date()
 
 const Calendar: React.FC = () => (
     <div className="calendar-outer">
-        <Header />
+        <Header date={date} />
         <Main date={date} />
     </div>
 )

@@ -14,6 +14,10 @@ export const months = [
     'DECEMBER'
 ]
 
+export const getMonth = (date: Date): string => {
+    return months[date.getMonth()]
+}
+
 export const getTotalDays = (date: Date): number => {
     let totalDays =
         date.getMonth() == 0 ||
