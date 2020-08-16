@@ -14,7 +14,6 @@
         "start": "rollup -c -w",
         "test": "jest"
     },
-    "type": "module",
     "dependencies": {
         "@babel/polyfill": "^7.10.4",
         "@testing-library/jest-dom": "^5.11.2",
@@ -23,11 +22,12 @@
         "@types/testing-library__jest-dom": "^5.9.2",
         "jest-dom": "^4.0.0",
         "jest-transform-css": "^2.0.0",
-        "react-test-renderer": "^16.13.1"
+        "ts-loader": "^8.0.2",
+        "typescript": "^3.9.7"
     },
     "peerDependencies": {
-        "react": ">= 16.8.0 < 2",
-        "react-dom": ">= 16.8.0 < 2"
+        "react": ">= 16.8.0",
+        "react-dom": ">= 16.8.0"
     },
     "devDependencies": {
         "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -41,13 +41,24 @@
         "jest": "^26.2.2",
         "jsdom": "16.4.0",
         "jsdom-global": "3.0.2",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "rollup": "^1.29.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "rollup": "^1.32.1",
         "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-typescript2": "^0.25.3",
         "ts-jest": "^26.1.4",
-        "typescript": "^2.8.3"
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "overrides": {
+        "*": {
+            "dependencies": {
+                "react": "-"
+            },
+            "peerDependencies": {
+                "react": "+"
+            }
+        }
     },
     "files": [
         "dist"

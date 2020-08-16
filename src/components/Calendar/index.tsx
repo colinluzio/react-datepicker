@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
+import './calendar.scss'
 import Header from './Header'
 import Main from './Main'
-import './calendar.scss'
 
-const [date, setDate] = useState(new Date())
-
-type CalendarProps = {
+type DateProps = {
     date?: Date
 }
 
-const Calendar: React.FC<CalendarProps> = props => (
-    <div className="calendar-outer">
-        {props.date ? setDate(props.date) : ''}
-        <Header date={date} />
-        <Main date={date} />
-    </div>
-)
+const Calendar: React.FC<DateProps> = props => {
+    const [date, setDate] = useState(props.date ? props.date : new Date())
+
+    const nextMonth = () => {
+        setDate(new Date(date.setMonth(date.getMonth() + 1)))
+    }
+    return (
+        <div className="calendar-outer">
+            <Header date={date} nextMonth={nextMonth} />
+            <Main date={date} />
+        </div>
+    )
+}
 
 export default Calendar
