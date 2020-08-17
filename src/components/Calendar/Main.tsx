@@ -2,8 +2,9 @@ import * as React from 'react'
 import * as helper from '../../helpers/calendar'
 import './calendar.scss'
 
-type CalendarProps = {
+interface CalendarProps {
     date: Date
+    selected: Date
 }
 const Main: React.FC<CalendarProps> = props => (
     <div className="calendar-main">
@@ -29,7 +30,12 @@ const Main: React.FC<CalendarProps> = props => (
                     title=""
                     className={`current-month-day grid_${index +
                         1 +
-                        helper.getPrevMonthDays(props.date).length}`}
+                        helper.getPrevMonthDays(props.date).length} ${
+                        props.date.getDate() === day &&
+                        props.selected.getMonth() === props.date.getMonth()
+                            ? 'selected'
+                            : ''
+                    }`}
                     key={index}
                 >
                     {day}
@@ -44,7 +50,12 @@ const Main: React.FC<CalendarProps> = props => (
                     title=""
                     className={`current-month-day grid_${helper.getGridIndex(
                         index
-                    )}`}
+                    )} ${
+                        props.date.getDate() === day &&
+                        props.selected.getMonth() === props.date.getMonth()
+                            ? 'selected'
+                            : ''
+                    }`}
                     key={index}
                 >
                     {day}

@@ -189,5 +189,9 @@
         .grid_7 {
             grid-column: 7 / span 1;
         }
+        .selected {
+            background: #0000ff;
+            color: #fff;
+        }
     }
 }
