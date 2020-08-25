@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as helper from '../../helpers/calendar'
-import './calendar.scss'
+//import './calendar.scss'
 
 interface CalendarProps {
     date: Date
